@@ -1,0 +1,6 @@
+<!--scan.wxml-->
+<view class="container">
+  <view class="deviceNum-input-view">
+    <input class="deviceNum-input" maxlength="12" placeholder="请输入设备号" />
+  </view>
+</view>
