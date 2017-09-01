@@ -1,21 +1,61 @@
 /**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+.top-view {
+    margin: 40rpx 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.date-left image, .date-right image {
+    width: 50rpx;
+    height: 50rpx;
+    align-content: center;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.date-view {
+    width: 600rpx;
+    height: 50rpx;
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
-.usermotto {
-  margin-top: 200px;
+.date-view picker {
+    width: 200rpx;
+    font-size: 30rpx;
+    border: 1rpx solid #505050;
+    border-radius: 10rpx;
+    align-content: center;
+    align-items: center;
+}
+
+#panel {
+    height: 65vh;
+    margin-top: 20rpx;
+}
+
+#panel text {
+    line-height: 13vh;
+    border-right: 1rpx solid #ddd;
+    border-bottom: 1rpx solid #ddd;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.flex-cell {
+    flex: 1;
 }

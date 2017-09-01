@@ -1,10 +1,39 @@
 <!--index.wxml-->
 <view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+    <view class='top-view'>
+        <view class='date-left' bindtap='left'>
+            <image src='../../resources/images/left.png'></image>
+        </view>
+        <view class='date-view'>
+            <picker mode="date" value="{{currentDate}}" start="2017-01-01" end="{{today}}" bindchange='dateChange'>
+                <text>{{nowaday}}</text>
+            </picker>
+        </view>
+        <view class='date-right' bindtap='right'>
+            <image wx:if="{{isRightButtonEnable}}" src='../../resources/images/right.png'></image>
+            <image wx:else src='../../resources/images/right_disable.png'></image>
+        </view>
+    </view>
+    <view id="panel" class="flex-column">
+        <view class="flex-row flex-cell">
+            <text class="flex-cell flex-row">1</text>
+            <text class="flex-cell flex-row">2</text>
+        </view>
+        <view class="flex-row flex-cell">
+            <text class="flex-cell flex-row">1</text>
+            <text class="flex-cell flex-row">2</text>
+        </view>
+        <view class="flex-row flex-cell">
+            <text class="flex-cell flex-row">1</text>
+            <text class="flex-cell flex-row">2</text>
+        </view>
+        <view class="flex-row flex-cell">
+            <text class="flex-cell flex-row">1</text>
+            <text class="flex-cell flex-row">2</text>
+        </view>
+        <view class="flex-row flex-cell">
+            <text class="flex-cell flex-row">1</text>
+            <text class="flex-cell flex-row">2</text>
+        </view>
+    </view>
 </view>
