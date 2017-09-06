@@ -110,11 +110,23 @@
   z-index: 3;
   right: 5rpx;
   top: 65rpx;
-  background-color: yellow;
 }
 
 .menu-window image {
   width:270rpx;
+}
+
+.menu-list {
+  position: fixed;
+  width: 270rpx;
+  height: 220rpx;
+  z-index: 3;
+  right: 5rpx;
+  top: 65rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: yellow;
 }
 
 .fullbg {
