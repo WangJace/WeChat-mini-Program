@@ -5,7 +5,7 @@
     <text class="nickname">{{userInfo.nickName}}</text>
   </view>
   <view class="list">
-    <block wx:for-items="{{list}}">
+    <block wx:for-items="{{list}}" wx:key="item">
       <navigator class="list-item" url="../{{item.page}}/{{item.page}}">
         <text class="item-title">{{item.title}}</text>
         <view class="arrow"></view>

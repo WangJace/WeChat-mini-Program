@@ -1,6 +1,8 @@
 <!--scan.wxml-->
 <view class="container">
-  <view class="deviceNum-input-view">
-    <input class="deviceNum-input" maxlength="12" placeholder="请输入设备号" />
-  </view>
+    <view class="deviceNum-input-view">
+        <input class="deviceNum-input" maxlength="12" placeholder="请输入设备号" value="{{result}}" />
+    </view>
+    <button class='confirm-button' type='primary' bindtap='confirm'>确定</button>
+    <button class='scan-button' type='primary' bindtap='scanCode'>扫一扫</button>
 </view>

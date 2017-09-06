@@ -1,39 +1,39 @@
 <!--index.wxml-->
 <view class="container">
-    <view class='top-view'>
-        <view class='date-left' bindtap='left'>
-            <image src='../../resources/images/left.png'></image>
-        </view>
-        <view class='date-view'>
-            <picker mode="date" value="{{currentDate}}" start="2017-01-01" end="{{today}}" bindchange='dateChange'>
-                <text>{{nowaday}}</text>
-            </picker>
-        </view>
-        <view class='date-right' bindtap='right'>
-            <image wx:if="{{isRightButtonEnable}}" src='../../resources/images/right.png'></image>
-            <image wx:else src='../../resources/images/right_disable.png'></image>
-        </view>
+  <view class='background-view'>
+    <image src='../../resources/images/note.png' mode='widthFix'></image>
+  </view>
+  <view class='top-view'>
+    <view class='date-view'>
+      <view class='date-left' bindtap='left'>
+        <image src='../../resources/images/left.png' mode='center'></image>
+      </view>
+      <view class='picker-view'>
+        <picker mode="date" value="{{currentDate}}" start="2017-01-01" end="{{today}}" bindchange='dateChange'>
+          <text>{{nowaday}}</text>
+        </picker>
+      </view>
+      <view class='date-right' bindtap='right'>
+        <image wx:if="{{isRightButtonEnable}}" src='../../resources/images/right.png' mode='center'></image>
+        <image wx:else src='../../resources/images/right_disable.png' mode='center'></image>
+      </view>
     </view>
-    <view id="panel" class="flex-column">
-        <view class="flex-row flex-cell">
-            <text class="flex-cell flex-row">1</text>
-            <text class="flex-cell flex-row">2</text>
-        </view>
-        <view class="flex-row flex-cell">
-            <text class="flex-cell flex-row">1</text>
-            <text class="flex-cell flex-row">2</text>
-        </view>
-        <view class="flex-row flex-cell">
-            <text class="flex-cell flex-row">1</text>
-            <text class="flex-cell flex-row">2</text>
-        </view>
-        <view class="flex-row flex-cell">
-            <text class="flex-cell flex-row">1</text>
-            <text class="flex-cell flex-row">2</text>
-        </view>
-        <view class="flex-row flex-cell">
-            <text class="flex-cell flex-row">1</text>
-            <text class="flex-cell flex-row">2</text>
-        </view>
+    <view class='menu-view' bindtap='menuAction'>
+      <image src='../../resources/images/menu.png' mode='center'></image>
     </view>
+  </view>
+  <view class='report-view'>
+    <view class='first-view'>
+      <canvas canvas-id='canvas'></canvas>
+    </view>
+    <view class='second-view'></view>
+  </view>
+  <view class="menu-window {{isShowMenuList ? '': 'disappear'}}">
+   <image src='../../resources/images/downlist_background.png' mode='widthFix'></image> 
+    <view class='menu-list' wx:for="{{menuList}}" wx:key="item">
+      <image src='{{item.image}}' mode='center'></image>
+      <label>{{item.title}}</label>
+    </view>
+  </view>
+  <view class="fullbg {{isShowMenuList ?'fullopacity':''}}" bindtap="hidebg"></view>
 </view>

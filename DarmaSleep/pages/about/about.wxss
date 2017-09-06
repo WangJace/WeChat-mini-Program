@@ -1,0 +1,17 @@
+/* pages/about/about.wxss */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container image {
+  margin-top: 400rpx;
+  width: 500rpx;
+  height: 110rpx;
+}
+
+.container text {
+  margin-top: 500rpx;
+  color: #707070;
+}

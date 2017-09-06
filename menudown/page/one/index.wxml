@@ -1,0 +1,15 @@
+<!--page/one/index.wxml-->
+<view class="page">
+    <view class="nav">
+        <view class="nav-son borders {{shownavindex == 2? 'active' : ''}}" bindtap="list" data-nav="2">
+            <view class="content">女装</view>
+            <view class="icon"></view>
+        </view>
+    </view>
+    <view class="temp temp1 {{nzopen ? 'slidown' : 'slidup'}} {{nzshow ? 'disappear':''}}">
+        <view wx:for="{{content}}">
+            {{item}}
+        </view>
+    </view>
+    <view class="fullbg {{isfull ?'fullopacity':''}}" bindtap="hidebg"></view>
+</view>

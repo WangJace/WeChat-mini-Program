@@ -8,7 +8,14 @@ Page({
     nowaday: "",
     isRightButtonEnable: false,
     currentDate: '2017-09-01',
-    today: '2017-09-01'
+    today: '2017-09-01',
+    isShowMenuList: false,
+    menuList: [
+      { title: '绑定设备', image: "../../resources/images/banding.png" },
+      { title: '关于', image: "../../resources/images/about.png" }]
+  },
+  onReady: function () {
+
   },
   onLoad: function () {
     console.log('onLoad')
@@ -24,6 +31,7 @@ Page({
       nowaday: dateStr
     })
   },
+
   left: function () {
     var flag = this.data.isRightButtonEnable
     if (!flag) {
@@ -65,6 +73,26 @@ Page({
     this.setData({
       currentDate: date,
       nowaday: date
+    })
+  },
+  menuAction: function () {
+    console.log('menuAction')
+    if (this.data.isShowMenuList) {
+      this.setData({
+        isShowMenuList: false
+      })
+    }
+    else {
+      this.setData({
+        isShowMenuList: true
+      })
+    }
+  },
+
+  hidebg: function() {
+    console.log('hidebg')
+    this.setData({
+      isShowMenuList: false
     })
   }
 })

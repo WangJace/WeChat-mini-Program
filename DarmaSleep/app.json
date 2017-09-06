@@ -3,31 +3,15 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/setting/setting",
-    "pages/scan/scan"
+    "pages/scan/scan",
+    "pages/about/about"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#0E2737",
+    "navigationBarTextStyle": "white",
     "navigationBarTitleText": "小马护士",
-    "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "resources/images/tab_icon01.png",
-        "selectedIconPath": "resources/images/tab_icon01_selected.png"
-      },
-      {
-        "pagePath": "pages/setting/setting",
-        "text": "设置",
-        "iconPath": "resources/images/tab_icon02.png",
-        "selectedIconPath": "resources/images/tab_icon02_selected.png"
-      }
-    ],
-    "selectedColor": "#2cae3d",
-    "color": "#707070"
+    "backgroundColor": "#ffffff"
   },
   "networkTimeout": {
     "request": 10000,
