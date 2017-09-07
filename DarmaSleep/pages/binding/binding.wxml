@@ -1,0 +1,17 @@
+<!--pages/binding/binding.wxml-->
+<view class='container'>
+  <image class='binding-state-img' src="../../resources/images/{{bindingImg}}" mode='center'></image>
+  <label class='binding-state'>{{bindingState}}</label>
+  <view class="unbinding-view {{isBinding ? 'disappear': ''}}">
+    <button bindtap='inputDeviceNum' class='input-button'>输入设备号</button>
+    <label class='or-label'>或者</label>
+    <view class='scan-view' bindtap='scanAction'>
+      <image src='../../resources/images/scan.png' mode='center'></image>
+      <label>扫描二维码</label>
+    </view>
+  </view>
+  <view class="binding-view {{isBinding ? '': 'disappear'}}">
+    <label>解除当前绑定的设备</label>
+    <button bindtap='unbindingDevice' class='unbinding-button'>解绑</button>
+  </view>
+</view>

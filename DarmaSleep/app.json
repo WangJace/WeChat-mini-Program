@@ -2,9 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/setting/setting",
-    "pages/scan/scan",
-    "pages/about/about"
+    "pages/about/about",
+    "pages/binding/binding"
   ],
   "window": {
     "backgroundTextStyle": "light",

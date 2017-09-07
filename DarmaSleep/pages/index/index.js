@@ -9,13 +9,14 @@ Page({
     isRightButtonEnable: false,
     currentDate: '2017-09-01',
     today: '2017-09-01',
-    isShowMenuList: false,
-    menuList: [
-      { title: '绑定设备', image: "../../resources/images/banding.png" },
-      { title: '关于', image: "../../resources/images/about.png" }]
+    isShowMenuList: false
   },
   onReady: function () {
-
+    wx.login({
+      success: function(res) {
+        console.log(res.code)
+      }
+    })
   },
   onLoad: function () {
     console.log('onLoad')
@@ -89,8 +90,13 @@ Page({
     }
   },
 
-  hidebg: function() {
+  hidebg: function () {
     console.log('hidebg')
+    this.setData({
+      isShowMenuList: false
+    })
+  },
+  navigatorTapAction: function() {
     this.setData({
       isShowMenuList: false
     })

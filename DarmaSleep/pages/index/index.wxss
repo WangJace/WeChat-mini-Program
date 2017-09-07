@@ -1,5 +1,9 @@
 /**index.wxss**/
 
+.container {
+  background-color: #0e2737;
+}
+
 .top-view {
   height: 80rpx;
   display: flex;
@@ -68,6 +72,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0);
+  z-index: 1;
 }
 
 .background-view image {
@@ -99,8 +104,85 @@
 .second-view {
   margin-top: 18rpx;
   width: 100%;
-  height: 475rpx;
-  background-color: yellow;
+  height: 450rpx;
+  background-color: white;
+}
+
+.line1, .line2, .line3 {
+  height: 150rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.line1, .line2 {
+  border-bottom: 1px solid #e7ebeb;
+  margin: 0 20rpx;
+}
+
+.line1 {
+  padding-top: 45rpx;
+}
+
+.second-view text {
+  font-weight: 800;
+  text-align: left;
+  font-size: 48rpx;
+}
+
+.second-view label {
+  font-weight: 200;
+  text-align: left;
+  font-size: 28rpx;
+}
+
+.sleep-time, .weak-up-time, .hr, .br, .move-times, .get-up-times {
+  width: 50%;
+  height: 150rpx;
+  display: flex;
+  align-items: center;
+}
+
+.text-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 350rpx;
+}
+
+.sleep-time .text-view, .weak-up-time .text-view, .hr .text-view, .br .text-view,
+.move-times .text-view, .get-up-times .text-view {
+  position: relative;
+  left: -70rpx;
+}
+
+.weak-up-time, .br, .get-up-times {
+  border-left: 1px solid #e7ebeb;
+}
+
+.sleep-time text {
+  color: #24638c;
+}
+
+.weak-up-time text {
+  color: #ffa000;
+}
+
+.hr text {
+  color: #ff7e7e;
+}
+
+.br text {
+  color: #42c1a7;
+}
+
+.move-times text {
+  color: #f6cd69;
+}
+
+.get-up-times text {
+  color: #417da4;
 }
 
 .menu-window {
@@ -113,20 +195,38 @@
 }
 
 .menu-window image {
-  width:270rpx;
+  width: 270rpx;
 }
 
-.menu-list {
-  position: fixed;
-  width: 270rpx;
-  height: 220rpx;
-  z-index: 3;
-  right: 5rpx;
-  top: 65rpx;
+.menu-binding, .menu-about {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: yellow;
+  position: fixed;
+  z-index: 3;
+  width: 270rpx;
+  height: 100rpx;
+}
+
+.menu-binding {
+  top: 85rpx;
+}
+
+.menu-about {
+  top: 185rpx;
+}
+
+.menu-binding image, .menu-about image {
+  left: 10rpx;
+}
+
+.menu-binding label, .menu-about label {
+  font-size: 34rpx;
+  color: #0e2737;
+  line-height: 34rpx;
+  width: 500rpx;
+  text-align: left;
+  right: 50rpx;
 }
 
 .fullbg {
@@ -135,7 +235,7 @@
   z-index: 1;
   width: 100%;
   height: 100%;
-  background: #0E2737;
+  background: #0e2737;
   transition: all 2s;
   opacity: 0;
 }

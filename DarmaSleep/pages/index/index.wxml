@@ -26,14 +26,67 @@
     <view class='first-view'>
       <canvas canvas-id='canvas'></canvas>
     </view>
-    <view class='second-view'></view>
-  </view>
-  <view class="menu-window {{isShowMenuList ? '': 'disappear'}}">
-   <image src='../../resources/images/downlist_background.png' mode='widthFix'></image> 
-    <view class='menu-list' wx:for="{{menuList}}" wx:key="item">
-      <image src='{{item.image}}' mode='center'></image>
-      <label>{{item.title}}</label>
+    <view class='second-view'>
+      <view class='line1'>
+        <view class='sleep-time'>
+          <image src='../../resources/images/sleep.png' mode='center'></image>
+          <view class='text-view'>
+            <text>23:32</text>
+            <label>入睡时间</label>
+          </view>
+        </view>
+        <view class='weak-up-time'>
+          <image src='../../resources/images/weak_up.png' mode='center'></image>
+          <view class='text-view'>
+            <text>08:23</text>
+            <label>醒来时间</label>
+          </view>
+        </view>
+      </view>
+      <view class='line2'>
+        <view class='hr'>
+          <image src='../../resources/images/hr.png' mode='center'></image>
+          <view class='text-view'>
+            <text>76</text>
+            <label>心率</label>
+          </view>
+        </view>
+        <view class='br'>
+          <image src='../../resources/images/br.png' mode='center'></image>
+          <view class='text-view'>
+            <text>16</text>
+            <label>呼吸率</label>
+          </view>
+        </view>
+      </view>
+      <view class='line3'>
+        <view class='move-times'>
+          <image src='../../resources/images/move.png' mode='center'></image>
+          <view class='text-view'>
+            <text>123</text>
+            <label>体动次数</label>
+          </view>
+        </view>
+        <view class='get-up-times'>
+          <image src='../../resources/images/get_up.png' mode='center'></image>
+          <view class='text-view'>
+            <text>4</text>
+            <label>起夜次数</label>
+          </view>
+        </view>
+      </view>
     </view>
   </view>
-  <view class="fullbg {{isShowMenuList ?'fullopacity':''}}" bindtap="hidebg"></view>
+  <view class="menu-window {{isShowMenuList ? '': 'disappear'}}" bindtap='hidebg'>
+    <image src='../../resources/images/downlist_background.png' mode='widthFix'></image>
+    <navigator class='menu-binding' url='../binding/binding'>
+      <image src='../../resources/images/setting.png' mode='center'></image>
+      <label>设备管理</label>
+    </navigator>
+    <navigator class='menu-about' url='../about/about'>
+      <image src='../../resources/images/about.png' mode='center'></image>
+      <label>关于</label>
+    </navigator>
+  </view>
+  <view class="fullbg {{isShowMenuList ?'fullopacity':''}}" bindtap="navigatorTapAction"></view>
 </view>

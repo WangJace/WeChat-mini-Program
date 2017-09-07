@@ -1,0 +1,73 @@
+/* pages/binding/binding.wxss */
+.container {
+  background-color: white;
+}
+
+.binding-state-img {
+  width: 630rpx;
+  height: 250rpx;
+  margin-top: 100rpx;
+}
+
+.binding-state {
+  font-size: 34rpx;
+  color: #8D9693;
+  font-weight: 200;
+}
+
+.unbinding-view, .binding-view {
+  margin-top: 100rpx;
+  text-align: center;
+  width: 100%;
+}
+
+.binding-view {
+  margin-top: 200rpx;
+}
+
+.input-button, .unbinding-button {
+  margin: 50rpx 70rpx;
+  background-color: #42C1A7;
+  border-radius: 50rpx;
+  color: white;
+  font-size: 34rpx;
+  font-weight: 200;
+}
+
+.unbinding-button {
+  margin-top: 10rpx;
+}
+
+.or-label {
+  color: #8D9693;
+  font-size: 28rpx;
+  font-weight: 200;
+}
+
+.scan-view {
+  margin-top: 50rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.scan-view label {
+  color: #8D9693;
+  font-size: 34rpx;
+}
+
+.scan-view image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.binding-view label {
+  color: #8D9693;
+  font-size: 34rpx;
+  font-weight: 200;
+}
+
+.disappear {
+  display: none;
+}

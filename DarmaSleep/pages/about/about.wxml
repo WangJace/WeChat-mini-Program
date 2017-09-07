@@ -1,5 +1,5 @@
 <!--pages/about/about.wxml-->
 <view class='container'>
-<image src='../../resources/images/darma.png'></image>
-<text>深圳市大耳马科技有限公司</text>
+  <image src='../../resources/images/darma.png' mode='center'></image>
+  <text>深圳市大耳马科技有限公司</text>
 </view>

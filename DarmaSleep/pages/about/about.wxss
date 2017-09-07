@@ -1,17 +1,17 @@
 /* pages/about/about.wxss */
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: white;
 }
 
 .container image {
-  margin-top: 400rpx;
+  margin-top: 450rpx;
   width: 500rpx;
-  height: 110rpx;
+  height: 200rpx;
 }
 
 .container text {
-  margin-top: 500rpx;
-  color: #707070;
+  margin-top: 50rpx;
+  color: #8d9693;
+  font-size: 34rpx;
+  font-weight: 200;
 }
