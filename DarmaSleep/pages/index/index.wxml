@@ -89,4 +89,17 @@
     </navigator>
   </view>
   <view class="fullbg {{isShowMenuList ?'fullopacity':''}}" bindtap="navigatorTapAction"></view>
+  <!--弹窗-->
+  <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modal-dialog" wx:if="{{showModal}}">
+    <view class="modal-title">提示</view>
+    <view class="modal-content">
+      <view class='modal-text'>
+      <text>因为您是首次打开此小程序，我们需使用您的手机号码创建账号</text>
+      </view>
+    </view>
+    <view class="modal-footer">
+    <button class="btn-confirm" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">确定</button>
+    </view>
+  </view>
 </view>

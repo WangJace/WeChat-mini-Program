@@ -1,9 +1,5 @@
 /**index.wxss**/
 
-.container {
-  background-color: #0e2737;
-}
-
 .top-view {
   height: 80rpx;
   display: flex;
@@ -11,7 +7,7 @@
   justify-content: center;
   align-items: center;
   background-color: #0e2737;
-  z-index: 2;
+  z-index: 4;
 }
 
 .date-view {
@@ -58,7 +54,8 @@
   justify-content: flex-end;
   align-items: center;
   position: absolute;
-  width: 100%;
+  width: 100rpx;
+  right: 0;
 }
 
 .menu-view image {
@@ -69,26 +66,26 @@
 
 .background-view {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(255, 255, 255, 0);
   z-index: 1;
 }
 
 .background-view image {
   margin-top: 515rpx;
-  width: 100%;
+  width: 100vw;
 }
 
 .report-view {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 975rpx;
   position: relative;
   background-color: #e7ebeb;
 }
 
 .first-view {
-  width: 100%;
+  width: 100vw;
   height: 475rpx;
   background-color: white;
   display: flex;
@@ -97,14 +94,14 @@
 }
 
 .first-view canvas {
-  width: 100%;
+  width: 100vw;
   height: 320rpx;
 }
 
 .second-view {
   margin-top: 18rpx;
-  width: 100%;
-  height: 450rpx;
+  width: 100vw;
+  height: 500rpx;
   background-color: white;
 }
 
@@ -233,8 +230,8 @@
   position: fixed;
   top: 0;
   z-index: 1;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background: #0e2737;
   transition: all 2s;
   opacity: 0;
@@ -246,4 +243,69 @@
 
 .disappear {
   display: none;
+}
+
+/* 弹窗 */
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog {
+  width: 540rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  background: #f9f9f9;
+  margin: -180rpx 105rpx;
+  border-radius: 36rpx;
+}
+
+.modal-title {
+  padding-top: 20rpx;
+  font-size: 36rpx;
+  color: #030303;
+  text-align: center;
+}
+
+.modal-content {
+  padding: 20rpx 32rpx;
+}
+
+.modal-text {
+  display: flex;
+  width: 100%;
+  height: 83rpx;
+  line-height: 28rpx;
+  text-align: center;
+}
+
+.modal-text text {
+  color: #333;
+  font-size: 28rpx;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  height: 86rpx;
+  border-top: 1px solid #dedede;
+  font-size: 34rpx;
+  line-height: 86rpx;
+}
+
+.btn-confirm {
+  width: 100%;
+  color: #ec5300;
+  text-align: center;
 }
