@@ -24,7 +24,15 @@
   </view>
   <view class='report-view'>
     <view class='first-view'>
-      <canvas canvas-id='canvas'></canvas>
+      <canvas class="circle2" canvas-id="canvasCircle"></canvas>
+      <canvas class="circle1" canvas-id="canvasArcCir"></canvas>
+      <view class='score-view'>
+        <view class='label-view'>
+          <label class='label1'>{{score}}</label>
+          <label class='label2'>分</label>
+        </view>
+        <label class='label3'>{{describe}}</label>
+      </view>
     </view>
     <view class='second-view'>
       <view class='line1'>
@@ -95,11 +103,11 @@
     <view class="modal-title">提示</view>
     <view class="modal-content">
       <view class='modal-text'>
-      <text>因为您是首次打开此小程序，我们需使用您的手机号码创建账号</text>
+        <text>因为您是首次打开此小程序，我们需使用您的手机号码创建账号</text>
       </view>
     </view>
     <view class="modal-footer">
-    <button class="btn-confirm" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">确定</button>
+      <button class="btn-confirm" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">确定</button>
     </view>
   </view>
 </view>

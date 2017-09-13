@@ -90,12 +90,63 @@
   background-color: white;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-.first-view canvas {
-  width: 100vw;
-  height: 320rpx;
+.circle1 {
+  width: 150px;
+  height: 150px;
+  z-index: 2;
+  background: yellowgreen;
+  position: fixed;
+  left: 0;
+}
+
+.circle2 {
+  width: 150px;
+  height: 150px;
+  z-index: 1;
+  background: forestgreen;
+  position: fixed;
+  left: 0;
+}
+
+.score-view {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rebeccapurple;
+  z-index: 3;
+  position: fixed;
+  left: 0;
+}
+
+.score-view .label-view {
+  margin-top: -20rpx;
+}
+
+.score-view .label-view label {
+  color: #42c1a7;
+}
+
+.score-view .label1 {
+  font-size: 100rpx;
+  font-weight: 1500;
+  margin-left: 10rpx;
+}
+
+.score-view .label2 {
+  font-size: 25rpx;
+  font-weight: 400;
+}
+
+.score-view .label3 {
+  font-size: 25rpx;
+  font-weight: 200;
+  color: #0e2737;
+  margin-top: -30rpx;
 }
 
 .second-view {
@@ -246,6 +297,7 @@
 }
 
 /* 弹窗 */
+
 .modal-mask {
   width: 100%;
   height: 100%;
@@ -306,6 +358,6 @@
 
 .btn-confirm {
   width: 100%;
-  color: #ec5300;
+  color: #11b412;
   text-align: center;
 }

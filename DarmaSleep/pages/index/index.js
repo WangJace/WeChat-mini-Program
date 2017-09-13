@@ -3,16 +3,26 @@
 // 在需要使用的js文件中，导入js  
 var util = require('../../utils/util.js');
 var app = getApp()
+var interval
+var varName
+var ctx = wx.createCanvasContext('canvasArcCir')
+var currentDate = new Date()
+
 Page({
   data: {
     nowaday: "",
     isRightButtonEnable: false,
-    currentDate: '2017-09-01',
-    today: '2017-09-01',
     isShowMenuList: false,
-    showModal: true
+    showModal: false,
+    today: '',
+    score: 60,
+    describe: '睡得不错'
   },
   onReady: function () {
+    var date = new Date()
+    this.setData ({
+      today: date
+    })
     // wx.login({
     //   success: function(res) {
     //     console.log('code =' + res.code)
@@ -25,18 +35,43 @@ Page({
     //     console.log('iv = '+ res.iv)
     //   }
     // })
+    //创建并返回绘图上下文context对象。
+    var cxt_arc = wx.createCanvasContext('canvasCircle')
+    cxt_arc.setLineWidth(4)
+    cxt_arc.setStrokeStyle('#E7EBEB')
+    cxt_arc.setLineCap('round')
+    cxt_arc.beginPath()
+    cxt_arc.arc(75, 75, 60, 0, 2 * Math.PI, false)
+    cxt_arc.stroke()
+    cxt_arc.draw()
+
+    this.drawCircle()
+  },
+  drawCircle: function () {
+    console.log('drawCircle')
+    var step = 1, startAngle = 1.5 * Math.PI, endAngle = this.data.score * 2 * Math.PI / 100 + 1.5 * Math.PI;
+    ctx.setFillStyle('white');
+    ctx.clearRect(0, 0, 200, 200)
+    ctx.draw()
+    var x = 75, y = 75, radius = 60
+    ctx.setLineWidth(4)
+    const grd = ctx.createLinearGradient(140, 0, 140, 140)
+    grd.addColorStop(0, '#42C1A7')
+    grd.addColorStop(1, '#F6CD69')
+    ctx.setStrokeStyle(grd)
+    ctx.setLineCap('round')
+    ctx.beginPath()
+    ctx.arc(x, y, radius, startAngle, endAngle, false)
+    ctx.stroke()
+    ctx.draw()
   },
   onLoad: function () {
     console.log('onLoad')
-    var date = new Date()
-    this.data.currentDate = date
     // 再通过setData更改Page()里面的data，动态更新页面的数据
-    var dateStr = util.formatDate(date)
+    var dateStr = util.formatDate(currentDate)
     console.log(dateStr)
     this.setData({
       // 调用函数时，传入new Date()参数，返回值是日期和时间
-      currentDate: date,
-      today: date,
       nowaday: dateStr
     })
   },
@@ -50,43 +85,33 @@ Page({
       })
     }
     // 修改日期
-    var date = this.data.currentDate;
-    date.setDate(date.getDate() - 1)
+    currentDate.setDate(currentDate.getDate() - 1)
     this.setData({
-      currentDate: date,
-      nowaday: util.formatDate(this.data.currentDate)
+      nowaday: util.formatDate(currentDate)
     })
   },
   right: function () {
     if (this.data.isRightButtonEnable) {
-      var date = this.data.currentDate;
-      console.log(date.getTime())
-      date.setDate(date.getDate() + 1)
-      console.log(date.getTime())
-      let today = new Date()
-      console.log(today.getTime())
-      if (Math.abs(date.getTime() - today.getTime()) < 12 * 60 * 60 * 1000) {
+      // 修改日期
+      currentDate.setDate(currentDate.getDate() + 1)
+      if (Math.abs(currentDate.getTime() - new Date().getTime()) < 12 * 60 * 60 * 1000) {
         this.setData({
           isRightButtonEnable: false
         })
       }
       this.setData({
-        currentDate: date,
-        nowaday: util.formatDate(this.data.currentDate)
+        nowaday: util.formatDate(currentDate)
       })
     }
   },
   dateChange: function (e) {
     var date = e.detail.value
     console.log(date)
-    var temp = new Date(date)
+    currentDate = new Date(date)
     this.setData({
-      currentDate: temp,
       nowaday: date
     })
-
-    let today = new Date()
-    if (Math.abs(temp.getTime() - today.getTime()) < 12 * 60 * 60 * 1000) {
+    if (Math.abs(currentDate.getTime() - new Date().getTime()) < 12 * 60 * 60 * 1000) {
       this.setData({
         isRightButtonEnable: false
       })
@@ -117,7 +142,7 @@ Page({
       isShowMenuList: false
     })
   },
-  navigatorTapAction: function() {
+  navigatorTapAction: function () {
     this.setData({
       isShowMenuList: false
     })
